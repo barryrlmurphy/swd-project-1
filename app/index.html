@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Project 1 - Event Planner</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="project1App">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+- You do not need to create a real back-end or save user information, but the app must provide a form for users to create an account. Account creation should include, but is not limited to:
+    - Name
+    - Email address
+    - Secure password (with character and length requirements)
+    - Optional public biographical information (such as employer, job title, birthday, etc)
+- The app should allow users to create a new event. Each event should, at a minimum, allow a user to set:
+    - Name of the event
+    - Type of the event (birthday party, conference talk, wedding, etc.)
+    - Event host (could be an individual’s name or an organization)
+    - Event start date and time
+    - Event end date and time
+    - Guest list
+    - Location
+    - Optional message to the guests with additional information about the event
+- The app should display events that have been created.
+
+    [ACCOUNT]
+    <label for="name">Your name:</label>
+    <input type="text" name="name" id="name" value="" placeholder="Your name..."/>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" value="" placeholder="Your email..."/>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" value="" placeholder="Password..."/>
+
+    <label for="repeatPassword">Repeat password:</label>
+    <input type="text" name="repeatPassword" id="repeatPassword" value="" placeholder="Repeat password..."/>
+
+    [EVENT]
+    <label for="name">Your name:</label>
+    <input type="text" name="name" id="name" value="" placeholder="Your name..."/>
+
+    <label for="name">Your name:</label>
+    <input type="text" name="name" id="name" value="" placeholder="Your name..."/>
+
+    <label for="name">Your name:</label>
+    <input type="text" name="name" id="name" value="" placeholder="Your name..."/>
+
+    <label for="name">Your name:</label>
+    <input type="text" name="name" id="name" value="" placeholder="Your name..."/>
+
+    <label for="name">Your name:</label>
+    <input type="text" name="name" id="name" value="" placeholder="Your name..."/>
+
+    <label for="name">Your name:</label>
+    <input type="text" name="name" id="name" value="" placeholder="Your name..."/>
+
+    <label for="name">Your name:</label>
+    <input type="text" name="name" id="name" value="" placeholder="Your name..."/>
+
+    <label for="name">Your name:</label>
+    <input type="text" name="name" id="name" value="" placeholder="Your name..."/>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
