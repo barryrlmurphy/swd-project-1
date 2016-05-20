@@ -1,0 +1,44 @@
+.option-box {
+    width: 100%;
+    max-width: 300px;
+    display: inline-block;
+    text-align: center;
+    padding: 35px 10px 50px 10px;
+    margin: 10px 0;
+    background: #ffffff;
+    border-radius: 4px;
+    color: #444444;
+    cursor: pointer;
+}
+.option-box .option-num {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    padding: 8px;
+    background: #05668D;
+    color: #ffffff;
+    text-align: center;
+    line-height: 43px;
+    font-size: 40px;
+    margin: 0 0 14px 0;
+}
+.option-box h2 {
+	font-size: 25px;
+}
+.option-box.complete-option {
+	background: #02C39A;
+}
+.option-box.locked-option {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+// media queries 
+@media (min-width: 400px) { 
+
+	.option-box {
+	    margin: 10px;
+	}
+
+}

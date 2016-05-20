@@ -1,0 +1,83 @@
+// =============================================================================
+// base styles for event planner
+// =============================================================================
+
+body {
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  background-color: $primary-color-1; 
+  color: rgba(255,255,255,0.8);
+  font-size: 16px;
+  min-width: 320px;
+  text-align: center; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a:link,
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+a:active,
+a:active:focus {
+  outline: 0;
+  box-shadow: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+h1 {
+  font-size: 28px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  text-shadow: 0 2px 0 black;
+  opacity: 0.6;
+  margin: 0 0 30px 0;
+}
+h3 {
+  font-size: 19px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+}
+p {
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 34px;
+}
+label {
+  display: block;
+  margin: 0 0 4px 0; 
+}
+input,
+textarea {
+  padding: 8px;
+  font-size: 14px;
+  color: rgba(0,0,0,0.8);
+  border-radius: 4px;
+  width: 100%;
+  border: 2px solid $primary-color-3;
+}
+.btn {
+  padding: 8px;
+  background-color: $primary-color-1;
+  color: rgba(255,255,255,0.8);
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.4);
+}

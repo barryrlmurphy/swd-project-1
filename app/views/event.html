@@ -1,0 +1,42 @@
+<!-- [EVENT] -->
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+    $('.datepicker').pickadate();
+    $('.timepicker').pickatime();
+  });  
+  
+</script>
+<div class="back-link"><a href="/#/options" title="Go back to the options screen">&#60;&#60; Options</a></div>
+<div class="main-box event-setup">
+  <h3>2 - Create An Event</h3>
+  <div class="divider"></div>
+  <div class="form-block">
+    <label for="name" title="Type of the event (birthday party, conference talk, wedding, etc.)">What type of event is it?</label>
+    <input type="text" name="type" id="type" value="" title="Type of event (birthday party, conference talk, wedding, etc.)" placeholder="e.g. Wedding"/> 
+  </div>
+  <div class="form-block">
+    <label for="type" title="Event host (could be an individual’s name or an organization)">Who is the event host?</label>
+    <input type="text" name="type" id="type" value="" title="Event host (could be an individual’s name or an organization)" placeholder="Event host"/> 
+  </div>
+  <div class="form-block date-block">
+    <label for="date">When is the event?</label>
+    <input type="text" name="date" id="date" value="" placeholder="Date..." class="datepicker" />
+    <input type="text" name="time" id="time" value="" placeholder="Time..." class="timepicker" />
+  </div>
+  <div class="form-block">
+    <label for="guests" title="Event Guests, who is going to attend your event?">Who are the guests for the event?</label>
+    <textarea name="guests" id="guests" rows="5" cols="50" title="Event Guests, who is going to attend your event?" placeholder="Guests..."></textarea>
+  </div>
+  <div class="form-block">
+    <label for="location" title="Where is the event to be held?">Where is the event?</label>
+    <textarea name="location" id="location" rows="5" cols="50" title="Where is the event to be held?" placeholder="e.g. Covent garden, London."></textarea>
+  </div>
+  <div class="form-block">
+    <label for="more-info" title="Do you have any special about the event?">Do you have any more info about the event?</label>
+    <textarea name="more-info" id="more-info" rows="5" cols="50" title="Do you have any special about the event?" placeholder="e.g. Black tie only"></textarea>
+  </div>
+  <div class="form-block right">
+    <button class="btn">Send</button>
+  </div>
+</div>	
