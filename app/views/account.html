@@ -1,25 +1,27 @@
 <!-- [ACCOUNT] -->
 <div class="back-link"><a href="/#/options" title="Go back to the options screen">&#60;&#60; Options</a></div>
 <div class="main-box account-setup">
-  <h3>1 - Create Your Account</h3>
-  <div class="divider"></div>
-  <div class="form-block">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" value="" placeholder="Your name..."/> 
-  </div>
-  <div class="form-block">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" value="" placeholder="Your email..."/>
-  </div>
-  <div class="form-block">
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" value="" placeholder="Password..."/>
-  </div>
-  <div class="form-block">
-    <label for="repeatPassword">Repeat password</label>
-    <input type="text" name="repeatPassword" id="repeatPassword" value="" placeholder="Repeat password..."/> 
-  </div>
-  <div class="form-block right">
-    <button class="btn">Send</button>
-  </div>
+  <form novalidate name="newAccountForm" ng-submit="submitForm(newAccountForm.$valid)">
+    <h3>1 - Create Your Account</h3>
+    <div class="divider"></div>
+    <div class="form-block">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" value="" placeholder="Your name..." ng-model="name" required/> 
+    </div>
+    <div class="form-block">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" value="" placeholder="Your email..." ng-model="email" required/>
+    </div>
+    <div class="form-block">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" value="" placeholder="Password..." ng-model="password" required/>
+    </div>
+    <div class="form-block">
+      <label for="repeatPassword">Repeat password</label>
+      <input type="text" name="repeatPassword" id="repeatPassword" value="" placeholder="Repeat password..." ng-model="repeatPassword" required/> 
+    </div>
+    <div class="form-block right">
+      <button type="submit" class="btn" ng-disabled="newAccountForm.$invalid">Submit</button>
+    </div>
+  </form>
 </div> 

@@ -8,10 +8,17 @@
  * Controller of the project1App
  */
 angular.module('project1App')
-  .controller('AccountCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('AccountCtrl', ['$scope', function ($scope) {
+
+    console.log('project1App!');
+  	console.log($scope);
+
+	$scope.submitForm = function(isValid) {
+		console.log('form submit: ' + isValid);
+		if (isValid) {
+			console.log('our form is amazing');
+		}
+
+	};
+
+  }]);
