@@ -6,22 +6,30 @@
     <div class="divider"></div>
     <div class="form-block">
       <label for="name">Name</label>
-      <input type="text" name="name" id="name" value="" placeholder="Your name..." ng-model="name" required/> 
+      <input type="text" name="name" id="name" value="" 
+              placeholder="Your name..." ng-model="name" required/> 
+      <p ng-show="newAccountForm.name.$invalid && !newAccountForm.name.$pristine" class="error-text">You name is required.</p>
     </div>
     <div class="form-block">
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" value="" placeholder="Your email..." ng-model="email" required/>
+      <input type="email" name="email" id="email" value="" 
+              placeholder="Your email..." ng-model="email" required/>
+      <p ng-show="newAccountForm.email.$invalid && !newAccountForm.email.$pristine" class="error-text">A valid email is required.</p>
     </div>
     <div class="form-block">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" value="" placeholder="Password..." ng-model="password" required/>
+      <input type="password" name="password" id="password" value="" 
+              placeholder="Password..." ng-model="password" ng-minlength="6" ng-keyup="comparePasswords()" required/>
+      <p ng-show="newAccountForm.password.$invalid && !newAccountForm.password.$pristine" class="error-text">Your password is too short. Please enter a password with at least 6 characters.</p>
     </div>
     <div class="form-block">
       <label for="repeatPassword">Repeat password</label>
-      <input type="text" name="repeatPassword" id="repeatPassword" value="" placeholder="Repeat password..." ng-model="repeatPassword" required/> 
+      <input type="password" name="repeatPassword" id="repeatPassword" value="" 
+              placeholder="Repeat password..." ng-model="repeatPassword" ng-keyup="comparePasswords()" ng-minlength="6" required/> 
+      <p ng-show="newAccountForm.repeatPassword.$invalid && !newAccountForm.repeatPassword.$pristine" class="error-text">Sorry, your passwords don't match</p>
     </div>
     <div class="form-block right">
-      <button type="submit" class="btn" ng-disabled="newAccountForm.$invalid">Submit</button>
+      <button type="submit" class="btn" ng-disabled="newAccountForm.$invalid && !newAccountForm.$pristine">Submit</button>
     </div>
   </form>
 </div> 
