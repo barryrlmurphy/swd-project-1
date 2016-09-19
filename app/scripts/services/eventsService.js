@@ -28,4 +28,13 @@ angular.module('project1App')
       	localStorageService.set('events', JSON.stringify(events));
   	};
 
+  	this.deleteEvent = function(index){
+  		var events = thisClass.getEvents();
+  		console.log(events);
+  		events.pop(index);
+  		console.log(events);
+
+      	localStorageService.set('events', JSON.stringify(events));
+  	};
+
   }]);

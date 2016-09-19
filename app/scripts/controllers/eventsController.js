@@ -8,8 +8,8 @@
  * Controller of the project1App
  */
 angular.module('project1App')
-  .controller('EventsCtrl', ['$scope','$location','localStorageService','EventsService','OptionsService','AccountsService', 
-  						function ($scope,$location,localStorageService,EventsService,OptionsService,AccountsService) {
+  .controller('EventsCtrl', ['$scope','$location','EventsService','OptionsService','AccountsService', 
+  						function ($scope,$location,EventsService,OptionsService,AccountsService) {
 
   	var thisClass = this;
   	this.generalError = false;
@@ -26,8 +26,8 @@ angular.module('project1App')
 			console.log('our form is valid :)');
 			thisClass.generalError = false;
 			thisClass.saveEvent();
-			// OptionsService.updateStoredOptions('complete','current','current');
-			// $location.path('/');
+			OptionsService.updateStoredOptions('complete','current','current');
+			$location.path('/');
 		}else{
 			console.log('form is not valid');
 			thisClass.generalError = true;

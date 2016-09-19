@@ -1,2 +1,15 @@
 <div class="back-link"><a href="/#/options" title="Go back to the options screen">&#60;&#60; Options</a></div>
-MANAGE EVENT!
+<div class="main-box manage-events">
+    <h3>3 - Manage Your Events</h3>
+	<div class="divider"></div>	
+	<ul class="event" ng-repeat="event in events">
+		<li class="header"><span class="title">{{$index + 1}})</span> {{event.type}}</li>
+		<li class="item"><span class="title">Host:</span> {{event.host}}</li>
+		<li class="item"><span class="title">Date:</span> {{event.date}}</li>
+		<li class="item"><span class="title">Time:</span> {{event.time}}</li>
+		<li class="item"><span class="title">Guests:</span> {{event.guests}}</li>
+		<li class="item"><span class="title">Location:</span> {{event.location}}</li>
+		<li class="item"><span class="title">More info:</span> {{event.moreInfo}}</li>
+		<li class="item option"><a href="javascript:void(0);" ng-click="deleteEvent($index)">Delete Event</a></li>
+	</ul>
+</div> 

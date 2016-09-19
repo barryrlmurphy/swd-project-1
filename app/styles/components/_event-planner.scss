@@ -55,6 +55,40 @@
   max-width: 600px;
 }
 
+/* manage events */
+.manage-events {
+  padding: 10px;
+}
+.event {
+  text-align: left;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: inherit;
+  margin: 10px 0;   
+}
+.event:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.event .header {
+  padding: 0 0 10px 0;
+}
+.event .item {
+  padding: 4px 0;
+  font-size: 13px;
+}
+.event .item .title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #ff5959;
+}
+.event .item.option {
+  text-align: right;
+  padding: 8px 0 2px 0;
+}
+.event .item.option a {
+  cursor: pointer;
+}
+
 /* icons */
 .icon {
   display: inline-block;
