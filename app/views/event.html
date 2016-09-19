@@ -1,42 +1,54 @@
 <!-- [EVENT] -->
 <script type="text/javascript">
   
-  $(document).ready(function(){
+  $(function() {
     $('.datepicker').pickadate();
-    $('.timepicker').pickatime();
+    $('.timepicker').pickatime();  
   });  
   
 </script>
 <div class="back-link"><a href="/#/options" title="Go back to the options screen">&#60;&#60; Options</a></div>
 <div class="main-box event-setup">
-  <h3>2 - Create An Event</h3>
-  <div class="divider"></div>
-  <div class="form-block">
-    <label for="name" title="Type of the event (birthday party, conference talk, wedding, etc.)">What type of event is it?</label>
-    <input type="text" name="type" id="type" value="" title="Type of event (birthday party, conference talk, wedding, etc.)" placeholder="e.g. Wedding"/> 
-  </div>
-  <div class="form-block">
-    <label for="type" title="Event host (could be an individual’s name or an organization)">Who is the event host?</label>
-    <input type="text" name="type" id="type" value="" title="Event host (could be an individual’s name or an organization)" placeholder="Event host"/> 
-  </div>
-  <div class="form-block date-block">
-    <label for="date">When is the event?</label>
-    <input type="text" name="date" id="date" value="" placeholder="Date..." class="datepicker" />
-    <input type="text" name="time" id="time" value="" placeholder="Time..." class="timepicker" />
-  </div>
-  <div class="form-block">
-    <label for="guests" title="Event Guests, who is going to attend your event?">Who are the guests for the event?</label>
-    <textarea name="guests" id="guests" rows="5" cols="50" title="Event Guests, who is going to attend your event?" placeholder="Guests..."></textarea>
-  </div>
-  <div class="form-block">
-    <label for="location" title="Where is the event to be held?">Where is the event?</label>
-    <textarea name="location" id="location" rows="5" cols="50" title="Where is the event to be held?" placeholder="e.g. Covent garden, London."></textarea>
-  </div>
-  <div class="form-block">
-    <label for="more-info" title="Do you have any special about the event?">Do you have any more info about the event?</label>
-    <textarea name="more-info" id="more-info" rows="5" cols="50" title="Do you have any special about the event?" placeholder="e.g. Black tie only"></textarea>
-  </div>
-  <div class="form-block right">
-    <button class="btn">Send</button>
-  </div>
+  <form novalidate name="newEventForm" ng-submit="submitForm(newEventForm.$valid)">
+    <h3>2 - Create An Event</h3>
+    <div class="divider"></div>
+    <p ng-show="generalError" class="error-text">Sorry, looks like not all required fields completed correctly.</p>
+    <div class="form-block">
+      <label for="name" title="Type of the event (birthday party, conference talk, wedding, etc.)">What type of event is it?</label>
+      <input type="text" name="type" id="type" ng-model="type" value="" title="Type of event (birthday party, conference talk, wedding, etc.)" placeholder="e.g. Wedding" autofocus="true" required required ng-maxlength="100"/> 
+      <p ng-show="newEventForm.type.$invalid && !newEventForm.type.$pristine" class="error-text">Please tell us what type of event it is (Max 100 characters).</p>
+    </div>
+    <div class="form-block">
+      <label for="type" title="Event host (could be an individual’s name or an organization)">Who is the event host?</label>
+      <input type="text" name="host" id="host" ng-model="host" value="" title="Event host (could be an individual’s name or an organization)" placeholder="Event host" required required ng-maxlength="100"/> 
+      <p ng-show="newEventForm.host.$invalid && !newEventForm.host.$pristine" class="error-text">Please tell us who the event host is (Max 100 characters).</p>
+    </div>
+    <div class="form-block date-block">
+      <label for="date">When is the event?</label>
+      <input type="text" name="date" id="date" ng-model="date" value="" placeholder="Date..." class="datepicker" required/>
+      <input type="text" name="time" id="time" ng-model="time" value="" placeholder="Time..." class="timepicker" required/>
+      <p ng-show="newEventForm.date.$invalid && !newEventForm.date.$pristine" class="error-text">Please tell us the date the event is on</p>
+      <p ng-show="newEventForm.time.$invalid && !newEventForm.time.$pristine" class="error-text">Please tell us the time the event starts</p>
+    </div>
+    <div class="form-block">
+      <label for="guests" title="Event Guests, who is going to attend your event?">Who are the guests for the event?</label>
+      <textarea name="guests" id="guests" ng-model="guests" rows="5" cols="50" title="Event Guests, who is going to attend your event?" placeholder="Guests..." required ng-maxlength="1000"></textarea>
+      <p ng-show="newEventForm.guests.$invalid && !newEventForm.guests.$pristine" class="error-text">Please tell what guests are going to attend the event (Max 1000 characters)</p>
+    </div>
+    <div class="form-block">
+      <label for="location" title="Where is the event to be held?">Where is the event?</label>
+      <textarea name="location" id="location" ng-model="location" rows="5" cols="50" title="Where is the event to be held?" placeholder="e.g. Covent garden, London." required ng-maxlength="300"></textarea>
+      <p ng-show="newEventForm.location.$invalid && !newEventForm.location.$pristine" class="error-text">Please tell where the event is being held (Max 300 characters)</p>
+    </div>
+    <div class="form-block">
+      <label for="more-info" title="Do you have any special about the event?">Do you have any more info about the event? (optional)</label>
+      <textarea name="moreInfo" id="moreInfo" ng-model="moreInfo" rows="5" cols="50" title="Do you have any special info about the event?" placeholder="e.g. Black tie only" ng-maxlength="1000"></textarea>
+      <p ng-show="newEventForm.moreInfo.$invalid && !newEventForm.moreInfo.$pristine" class="error-text">Sorry, maximum 1000 characters</p>
+    </div>
+    <div class="form-block right">
+      <button type="submit" class="btn" ng-disabled="newEventForm.$invalid">Submit</button>
+    </div>
+  </form>  
 </div>	
+
+

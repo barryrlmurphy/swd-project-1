@@ -8,19 +8,29 @@
  * Controller of the project1App
  */
 angular.module('project1App')
-  .controller('AccountCtrl', ['$scope','localStorageService', function ($scope,localStorageService) {
+  .controller('AccountCtrl', ['$scope','$location','localStorageService','AccountsService','OptionsService', 
+  						function ($scope,$location,localStorageService,AccountsService,OptionsService) {
 
-    console.log('project1App!');
-  	console.log($scope);
   	var thisClass = this;
+  	this.generalError = false;
+
+  	this.init = function(){
+  		if(AccountsService.getStoredAccount()){
+  			$location.path('/');
+  		}
+  	};
 
 	$scope.submitForm = function(isValid) {
 		console.log('form submit: ' + isValid);
 		if (isValid) {
 			console.log('our form is valid :)');
+			thisClass.generalError = false;
 			thisClass.saveAccount();
+			OptionsService.updateStoredOptions('complete','current','to-do');
+			$location.path('/event');
 		}else{
 			console.log('form is not valid');
+			thisClass.generalError = true;
 		}
 
 	};
@@ -39,11 +49,9 @@ angular.module('project1App')
 			'email' : $scope.newAccountForm.email.$viewValue,
 			'password' : $scope.newAccountForm.password.$viewValue 
 		};
-		localStorageService.set('accountDetails', accountDetails);
-
-		var retreivedAccount = localStorageService.get('accountDetails');
-		console.log('saved account: ');
-		console.log(retreivedAccount);
+		AccountsService.saveAccount(accountDetails);
 	};
+
+	this.init();
 
   }]);

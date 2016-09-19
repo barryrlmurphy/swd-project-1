@@ -9,9 +9,7 @@
  */
 angular.module('project1App')
   .controller('ManageCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+
+
   });

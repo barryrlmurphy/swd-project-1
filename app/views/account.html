@@ -4,10 +4,11 @@
   <form novalidate name="newAccountForm" ng-submit="submitForm(newAccountForm.$valid)">
     <h3>1 - Create Your Account</h3>
     <div class="divider"></div>
+    <p ng-show="generalError" class="error-text">Sorry, looks like not all required fields completed correctly.</p>
     <div class="form-block">
       <label for="name">Name</label>
       <input type="text" name="name" id="name" value="" 
-              placeholder="Your name..." ng-model="name" required/> 
+              placeholder="Your name..." ng-model="name" required autofocus="true" /> 
       <p ng-show="newAccountForm.name.$invalid && !newAccountForm.name.$pristine" class="error-text">You name is required.</p>
     </div>
     <div class="form-block">
@@ -29,7 +30,7 @@
       <p ng-show="newAccountForm.repeatPassword.$invalid && !newAccountForm.repeatPassword.$pristine" class="error-text">Sorry, your passwords don't match</p>
     </div>
     <div class="form-block right">
-      <button type="submit" class="btn" ng-disabled="newAccountForm.$invalid && !newAccountForm.$pristine">Submit</button>
+      <button type="submit" class="btn" ng-disabled="newAccountForm.$invalid">Submit</button>
     </div>
   </form>
 </div> 

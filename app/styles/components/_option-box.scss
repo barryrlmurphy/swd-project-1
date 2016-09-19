@@ -26,10 +26,11 @@
 .option-box h2 {
 	font-size: 25px;
 }
-.option-box.complete-option {
+.option-box.complete {
 	background: #02C39A;
+    cursor: not-allowed;
 }
-.option-box.locked-option {
+.option-box.to-do {
 	opacity: 0.5;
 	cursor: not-allowed;
 }

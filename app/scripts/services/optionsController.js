@@ -40,7 +40,7 @@ angular.module('project1App')
     $scope.checkAccount = function(){
     	var account = AccountsService.getStoredAccount();
     	if(account){
-			$scope.accountOptionText = 'Hi, ' + account.name + '!';	
+          $scope.accountOptionText = 'Hi, ' + account.name + '!';	
     	}
     };
 

@@ -32,7 +32,7 @@ angular
       })
       .when('/event', {
         templateUrl: 'views/event.html',
-        controller: 'EventCtrl',
+        controller: 'EventsCtrl',
         controllerAs: 'event'
       })
       .when('/manage', {
