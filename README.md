@@ -4,9 +4,9 @@
 ## Build & development
 
 - Clone or download the project
-- Make sure you have bower installed : (https://bower.io/#install-bower)
-- In the project folder run 'bower install'
-- Then run the app with 'grunt serve'
+- Make sure you have bower installed : https://bower.io/#install-bower
+- In the project folder run `bower install`
+- Then run the app with `grunt serve`
 
 ## Testing
 
