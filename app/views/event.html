@@ -14,12 +14,12 @@
     <div class="divider"></div>
     <p ng-show="generalError" class="error-text">Sorry, looks like not all required fields completed correctly.</p>
     <div class="form-block">
-      <label for="name" title="Type of the event (birthday party, conference talk, wedding, etc.)">What type of event is it?</label>
+      <label for="type" title="Type of the event (birthday party, conference talk, wedding, etc.)">What type of event is it?</label>
       <input type="text" name="type" id="type" ng-model="type" value="" title="Type of event (birthday party, conference talk, wedding, etc.)" placeholder="e.g. Wedding" autofocus="true" required required ng-maxlength="100"/> 
       <p ng-show="newEventForm.type.$invalid && !newEventForm.type.$pristine" class="error-text">Please tell us what type of event it is (Max 100 characters).</p>
     </div>
     <div class="form-block">
-      <label for="type" title="Event host (could be an individual’s name or an organization)">Who is the event host?</label>
+      <label for="host" title="Event host (could be an individual’s name or an organization)">Who is the event host?</label>
       <input type="text" name="host" id="host" ng-model="host" value="" title="Event host (could be an individual’s name or an organization)" placeholder="Event host" required required ng-maxlength="100"/> 
       <p ng-show="newEventForm.host.$invalid && !newEventForm.host.$pristine" class="error-text">Please tell us who the event host is (Max 100 characters).</p>
     </div>
